@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>경계선</title>
+<style>
+li {
+	font: 50px "Arial Black";
+	color: #333;
+	margin: 100x;
+	padding: 500x;
+	width: 100px;
+	height: 70px;
+	background-color: #cc5500;
+	text-align: center;
+	list-style: none;
+	border-radius: 30px 30px 30px 30px;
+	float: left;
+}
+
+#java3 {
+	border-radius: 0px 0px 0px 500px;
+}
+/*body태그 내의 모든 요소에 적용*/
+body {
+	font: 12px "Arial";
+	margin: 20px;
+}
+/* h1태그 내의 a 태그에 적용*/
+h1 a {
+	font-size: 40px;
+	margin:20px;
+}
+/*h1태그내의a태그에 적용*/
+h1 a{
+      font-size:40px;
+      /*밑줄 없애기*/
+      text-decoration:none;
+      /*글자 색상 설정*/
+      color:#000000;
+      /*너비 벌성*/
+      width:200px;
+      /*내부 여백 설정*/
+      padding:20px;
+      /*배경 설정*/
+      background-color:#eee;
+      /*경계선 설정*/
+      border: 1px solid rgb(18,52,86)
+      /*경게선에 라운드 효과 적용*/
+      border-radius: 15px;
+      box-shadow: inset 0px 0px
+          20px 15px rgba(18,52,86,0.8)
+}
+h1 a:hover{
+         background-color:#aaffff;
+}
+h1 a:active{
+         background-color:#66ffff;
+padding:35px;
+}
+
+
+</style>
+
+
+<script>
+	window.onload = function(){
+		document.getElementById("btn")
+		.addEventListener("click", function(){
+			alert("클릭");
+		})
+	}
+</script>
+
+
+
+</head>
+<body>
+<h1>
+	<a href="#" id="btn">대한민국</a>
+</h1>
+
+
+
+	<ul>
+		<li id="java1">J</li>
+		<li id="java2">A</li>
+		<li id="java3">V</li>
+		<li id="java4">A</li>
+
+
+
+	</ul>
+</body>
+
+</html>

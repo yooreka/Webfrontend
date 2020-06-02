@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>폼 스타일링</title>
+<style>
+/*목록 기호 삭제*/
+ul {
+	list-style-type: none;
+}
+/*목록의 floating 해제*/
+li {
+	clear: both;
+}
+/*form설정*/
+form {
+	width: 50em; /*50글자 정도 크기*/
+	border: 1px solid #666666;
+	border-radius: 10px;
+	box-shadow: .2em .2em .5em #999 background-color:#doe9f6;
+	padding: 1em;
+	overflow: hidden;
+	margin-left:40.5em;
+margin-right:1em;
+}
+/*label 설정*/
+label {
+	dispaly: block;
+	float: left;
+	text-align: right;
+	margin-right: .5em;
+	
+	color: #04699d;
+}
+/*한줄 입력 상자*/
+.textinput {
+	width: 30em;
+	height: 2em;
+	margin-left:10.5em;
+margin-right:1em;
+	border: 1px solid #666666;
+	margin-bottom: 1em;
+	color: #04699d;
+}
+/*여러 줄 글 상자 스타일 설정*/
+textarea {
+	dispaly: block;
+	width: 30em;
+	height: 5em;
+	border: 1px solid #666666;
+	magin-bottom: 1em;
+	margin-left:10.5em;
+margin-right:1em;
+	line-height: 1.25;
+	overflow: auto;
+	resize: none;
+}
+/*입력 란의 글자 모양 설정*/
+.textinpu, textarea {
+	font-family: Georgia, Times, serif;
+	font-size: 0.875em
+}
+
+fieldset {
+	margin: 0;
+	padding: 0;
+	border: none;
+}
+
+legend {
+	display: block;
+	width: 10em;
+	float: left;
+	margin-right: .5em;
+	text-ailgn: right;
+	color: #04699d;
+}
+
+#genders label, #message label {
+	color: #000000;
+	dispaly: inline;
+	float: none;
+	text-align: ingerit;
+	width: auto;
+	font-weight: normal;
+	background-color: inherit;
+}
+/*genders 라는 id를 가진 태그 안의 li태그*/
+#genders ul li {
+	display: inline;
+
+}
+
+#message ul li {
+	display: inline;
+	margin-bottom: 0;
+}
+
+#genders, #message{
+	margin-top: 1em;
+	margin-left:8.5em;
+margin-right:1em;
+margin-bottom: 1em;
+}
+/*속성 선택자를 이용해 버튼의 스타일 설정*/
+input[type="button"] {
+	dispaly: block;
+	width: 10em;
+	height: auto;
+	float: auto;
+	background: white;
+	font-size: inherit;
+	border: 1px solid #04699d;
+	border-radius: 4px;
+	border-shadow: 2px 2px 3px rgba(0, 0, 0, .5)
+}
+
+input[type="submit"], input[type="reset"] {
+	dispaly: block;
+	width: 10em;
+    height: auto;
+	float: auto;
+	background: white;
+	font-size: inherit;
+	border: 1px solid #04699d;
+	border-radius: 4px;
+	border-shadow: 2px 2px 3px rgba(0, 0, 0, .5)
+}
+input[type="submit"]{
+margin-left:10.5em;
+margin-right:1em;
+color:#cc0000;
+font-weight:900;}
+</style>
+</head>
+<body>
+	<form method="post" action="server.jsp" id="registerfomr"
+		enctype="multipart/form-data">
+		<h2 align="center">회원가입</h2>
+		<ul>
+			<li><label></label> <input type="text" id="email" name="email"
+				class="textinput" placeholder='EMAIL을입력하세요' /> <input type="button"
+				id="emailcheckbtn" value="중복확인" /></li>
+
+			<li><label></label> <input type="password" id="userpw"
+				name="userpw" class="textinput" placeholder='비밀번호를 입력하세요' /></li>
+
+
+
+			<!-- 필수 선택 
+          항목이 여러개 일떄는 select 항목의 개수가 적을 떄는 radio 
+          -->
+			<li><label for="age">나이</label> <select id="ages" name="age"
+				class="age">
+					<option value="1">10대</option>
+					<option value="2" selected="selected">20대</option>
+					<option value="3">30대</option>
+					<option value="4">40대</option>
+					<option value="5">50대</option>
+
+					<option value="6">기타</option>
+			</select></li>
+			<li>
+				<fieldset id="genders">
+					<legend>성별</legend>
+					<ul>
+						<li><label for="man"> <input type="radio"
+								name="gender" value="man" id="man" checked="checked" />남자
+						</label></li>
+
+						<li><label for="woman"> <input type="radio"
+								name="gender" value="woman" id="woman" />여자
+						</label></li>
+					</ul>
+				</fieldset>
+			<li>
+				<fieldset id="message">
+					<legend>메세지 수신 설정</legend>
+					<ul>
+						<li><label> <input type="checkbox" name="accept"
+								id="acceptemail" value="acceptemail" /> 메일수신허용 <input
+								type="checkbox" name="accept" id="acceptemail1"
+								value="acceptemail1" /> 메일수신거부
+						</label></li>
+
+					</ul>
+
+
+				</fieldset>
+			</li>
+
+			<li>
+				<fieldset id="message">
+					<legend>SMS 수신 설정</legend>
+					<ul>
+						<li><label> <input type="checkbox" name="accept"
+								id="acceptsms" value="acceptsms" /> sms수신허용 <input
+								type="checkbox" name="accept1" id="acceptsms1"
+								value="acceptsms1" /> sms수신거부
+
+						</label></li>
+
+					</ul>
+
+
+				</fieldset>
+			</li>
+
+			<!-- 여러 줄 글상자 -->
+			<li><label for="story"></label> <textarea id="story"
+					name="story" class="story" cols="30" rows="5" placeholder='가보고 싶은곳'></textarea></li>
+
+			<!-- 서버전송과 작성 취소 버튼 -->
+			<li class="buttons"><input type="submit" value="회원가입" /> <input
+				type="reset" value="작성취소" /></li>
+		</ul>
+
+	</form>
+</body>
+</html>
