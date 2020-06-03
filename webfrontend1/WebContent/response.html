@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>반응형 웹 디자인</title>
+<!-- 페이지의 크기를 항상디바이스 크기에 맞춰줌. -->
+<!-- 이니셜 스케일은 처음 페이지가 보여지는 배율 -->
+<!-- user-scalable은 유저가 확대축소를 할수 잇게할것인지 맥시멈스케일은 확대할때 최대배율 -->
+<!-- chrome에서는 옵션을 개발자가 설정하는것을 점점 하지않도록 권장합니다. -->
+<meta name="viewport"
+	content="width=device-width, initial-scale=0.5, maximum-scale=1.0, user-scalable=no" />
+
+<style>
+img {
+	width: 2000px;
+	height: 512px;
+} /*
+img{
+    width:50%;
+    height:50%;
+}*/
+/*미디어쿼리이용*/
+img {
+	width: 48%;
+} /*보통의 경우 적용되는 디자인*/
+body {
+	background-color: papayawhip;
+}
+/*컴퓨터나 스마트 폰에서 접속할 때 브라우저의 너비가 960px 까지 적용*/
+@media screen and (max-width:960px) {
+	body {
+		background-color: yellow;
+
+	}img {
+	width: 96%;
+}
+}
+</style>
+</head>
+<body>
+	<img src="images1/amanda.jpg" />
+	<img src="images1/hyuna.jpg" />
+</body>
+</html>
