@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>사용자 정의 객체</title>
+<script>
+        //객체를 생성
+     var phone1 = {"name":"유치송", "phone":"01022037616"};
+        //객체가 가지고 있는 속성을 호출
+        console.log(phone1.name);
+        document.write(phone1["phone"])
+        //없는 속성을 호출하면 undefined
+        console.log(phone1.address);
+        
+        //객체에 속성을 추가
+        phone1.disp = function(){
+        	alert("추가된 함수 - 메소드")
+        	
+        }
+        //메소드 호출
+        phone1.disp()
+        
+        function person(name, phone, address){
+        	//this가 사용되었으므로 생성자함수
+        	this.name = name;
+        	this.phone = phone;
+        	this.address= address;
+        }
+        
+        var person1 = new person("yoo", "01022037616", "서울시 강남");
+        var person2 = new person("kim", "01022227616", "도쿄 요코하마");
+        
+        console.log(person1.name);
+        //객체의 모든 속성을 순회
+        //객체가 소유한 내용을 확인하고자 할 때 이용
+        for(attr in person2){
+        	console.log(attr+":"+person2[attr]);
+        }
+        //자바 스크립트에서 배열은 속성이름이 숫자로된 객체로 취급
+         var ar = ['소녀시대', '로드벨세', '트와이스']
+        //자바스크립트에서 idx에 인덱스가 대입
+        for(idx in ar){
+        	console.log(idx)
+        }
+</script>
+</head>
+<body>
+
+</body>
+</html>

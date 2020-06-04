@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>for</title>
+<script>
+//console에 1부터 10까지 출력
+//console은 브라우져의 검사 창에 출력
+//console.log(출력할 내용)
+for(var i=1; i<=10; i=i+1){
+	console.log(i)
+}
+//image1.jpg 부터 image4.jpg 까지 본문에 출력 document.write(출력할 내용)을 호출하면 body에 내용이 출려-태그도 적용
+for(var i=1; i<=4; i=i+1){
+	document.write("<img src='images1/image" + i + ".jpg'/>");
+}
+var i=1;
+while(i<=4)
+	{	document.write("<img src='images1/image" + i + ".jpg'/>")
+			i=i+1
+};
+//이름에 패턴이 없는 이미지를 반복문을 이용해서 삽입
+//배열을 이용해서 처리
+var imageNames=
+	["hyuna.jpg", "nike.jpeg", "낚시.png"];
+ i=0;
+do{
+	document.write("<img src='images1/" + imageNames[i] +"'/>")
+			i=i+1;
+}while(i<imageNames.length);
+</script>
+
+</head>
+
+<body>
+<img src="images1/amanda.jpg"/>
+</body>
+</html>
