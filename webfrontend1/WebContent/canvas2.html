@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>캔버스</title>
+<style>
+#canvas{
+border:3px solid black;
+}
+</style>
+<script>
+  //body의 내용을 모두 읽어서 메모리에 로드하고 난 후
+  window.addEventListener("load", function(event){
+	  
+  });
+</script>
+</head>
+<body>
+<canvas id="canvas" width="1024" height="1024"></canvas>
+</body>
+<script>
+ var canvas = document.getElementById("canvas");
+ var context = canvas.getContext("2d")
+ 
+ //선두께는 lineWidth 속성
+ //선색상은 strokeStyle 속성
+ context.lineWidth = 12;
+ context.strokeStyle = "rgb(255,255,0)";
+ 
+ //경로 그리기
+ //beginPath() 와 closePath()를 호출하고 그사이에 moveTo(x, y), lineTo(x,y)로 선그리기
+ //bezierCurveTO() 나 quardraticCurveTo()로 곡선을 그릴수있고 rect()사각형, arc()원 그릴수있음
+ context.beginPath();
+ context.moveTo(100,100);
+ context.lineTo(200,100);
+ context.lineTo(130,200);
+ context.closePath();
+ 
+ context.stroke();
+ context.font = "30px Georgia";
+ context.fillText("유치송",10,50);
+ 
+ context.font = "45px Verdana";
+ var gradient = context.createLinearGradient(0, 0, canvas.width, 0);
+ gradient.addColorStop("0","magenta");
+ gradient.addColorStop("0.5","blue");
+ gradient.addColorStop("1","red");
+ 
+ context.fillStyle = gradient;
+ context.fillText("Hellow World!",10,90);
+ 
+</script>
+</html>

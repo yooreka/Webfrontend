@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>멀티미디어</title>
+</head>
+<body>
+<button onclick="myFunction()" type="button">length</button>
+	<video width="420" height="420" controls="controls">
+         
+		<!-- IPhone3G.mov를 재생할 수 있으면
+		재생하고 그렇지 않으면 Painting.mp4를 재생 -->
+		<source src="resource/resource/IPhone3G.mov"/>
+		<source src="resource/resource/Painting.mp4"/>
+	</video>
+	<button id="btn">재생</button>
+	<video width="420" height="420" id="video">
+
+		<!-- IPhone3G.mov를 재생할 수 있으면
+		재생하고 그렇지 않으면 Painting.mp4를 재생 -->
+		<source src="resource/resource/IPhone3G.mov"/>
+		<source src="resource/resource/Painting.mp4"/>
+	</video>
+	
+</body>
+  <script>
+  //버튼과 비디오 찾아오기
+  var btn = document.getElementById("btn");
+  var video = document.getElementById("video");
+  
+  //btn의 클릭 이벤트 처리
+  btn.addEventListener("click", function(){
+        
+	
+	  
+	  //재생중인지 확인
+	 if(!video.paused && !video.ended){
+		 video.pause();
+		 
+		  
+		 btn.innerHTML="재생";
+	 }else{
+		 //비디오 재생을 수행하고 버튼의 텍스트 변경
+		 video.play();
+		 btn.innerHTML="중지";
+		 console.log(video.duration);
+	 }
+	 //Video.duration = 159;
+  });
+
+ function myFunction(){
+	 alert(video.playbackRate());
+ }
+  </script>
+</html>
