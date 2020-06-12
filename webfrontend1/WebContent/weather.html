@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<!-- viewport 설정 너비는 디바이스의 너비로 확대 축소는 안되도록 -->
+<meta name="viewport" content="width=device-width, user-scalable=no">
+<!-- stylesheet경로설정 -->
+<link rel="stylesheet" href="css/weather.css">
+<!-- jquery 링크 설정 
+<script src=js/jquery.js></script>-->
+<!-- 사용자 스크립트 -->
+<script src="js/jquery.js"></script>
+<script src="js/weather.js"></script>
+   <!--   $(document).ready(function (){   	
+          //자바스크립트를 이용한 스타일 변경
+    	document.getElementById("msg1").style.color='red';
+    	document.getElementById("msg1").innerHTML='글자변경';
+    	//jquery를 이용한 스타일 변경
+    	$('#msg2').css('color', 'blue');
+    	$('#msg2').html('내용 변경');
+    	//jquery의 이벤트 처리
+    	$('#outer').click(function(){
+    		$('#outer').css('color', 'red');
+    	});
+    	$('#inner').click(function(){
+    		$('#inner').css('color', 'blue');
+    		//이벤트 버블링을 취소
+    		event.stopPropagation();    	
+    	});
+    });*/-->
+
+</head>
+<body>
+      <!--  <p id="msg1">javascript 만으로 스타일 변경</p>
+      <p id="msg2">jquery로 스타일 변경</p>   
+      <div id="outer">외부<p id="inner">내부</p>
+      </div>-->
+      <div id="weather_info">
+         <h1 class="city"></h1>
+         <section>
+         <!-- 날씨와 아이콘 출력 영역 -->
+           <p class="w_id"></p>
+           <figure class="icon"></figure>
+         
+         
+         <!-- 온도 출력 영역 -->
+         <aside>
+            <p class="temp_max">max</p>
+            <p class="temp_min">min</p>
+         </aside>
+         </section>
+         
+         <!-- 로딩 이미지 출력 -->
+         <img class="load_img" src="images1/loading.gif"
+         width="50px" />
+       </div>  
+</body>
+</html>
