@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>정규표현식</title>
+<script> 
+var str = "JavaScript RegExp";
+//정규식 객체 생성
+var reg = /Reg/
+//str의 reg가 존재하는지 확인
+if(reg.test(str)){
+	console.log("문자열이 존재");
+}else{
+	console.log("존재하지 않음");
+}
+//문자열 치환
+var result = str.replace(reg, "정규식");
+console.log(result);
+//정규식을 기준으로 분할
+result = str.split(reg);
+console.log(result);
+</script>
+
+</head>
+<body>
+  숫자만 입력<input type="text" id="numberinput"/>
+  
+ <form action="server.jsp" id="nameform">
+ <div id="nameerror"></div>
+      이름<input type="text"
+   placeholder="이름은 한글2~5로 입력하세요"
+   id="name" name="name" class="name" />
+   <input type="submit"/> 
+ </form>
+</body>
+  <script>
+    var numberinput = document.getElementById("numberinput");
+    numberinput.addEventListener("input", function(event){
+    // console.log("이벤트 발생")
+    	//이벤트 객체 찾아오기
+    var e = event || window.event;
+    console.log(e)
+    //누른키 값 가져오기
+    var keyCode = (e.which)? e.which : e.keyCode;
+    console.log(keyCode);
+    //입력한 키가 숫자가 아니면 삭제
+    //사실은 숫자가 아니면 ''로 변경
+    e.target.value = e.target.value.replace(/[^0-9]/g,'');
+    });
+    //nameform에서 전송버튼을 누른경우를 처리
+    document.getElementById("nameform")
+    .addEventListener("submit", function(event){
+    	//변수명으로 예약어를 사용하면 안되고 id와 name 같은 이름도 대부분 예약어
+    	var name = document.getElementById("name");
+    	//입력된 값 가져오기
+    	var val = name.value.trim();
+    	if(val.length < 1){
+    		document.getElementById("nameerror").innerHTML = "이름은 필수 입니다.";
+    		//스타일변경
+    		document.getElementById("nameerror").style.color = "red";
+    		//내용 초기화
+    		name.value = "";
+    		
+    		name.focus();
+    		//기본 이벤트 처리 하지 않음
+    		//폼의 데이터가 전송이안됨
+    		event.preventDefault();
+    	}else{
+    		//한글 2-5자 정규식을 생성
+    		var reg = /^[가-힣]{2,5}$/
+    		//정규식을 통과하지 못한경우
+    		if(!reg.test(val)){
+    			document.getElementById("nameerror").innerHTML = "이름은 한글.";
+        		//스타일변경
+        		document.getElementById("nameerror").style.color = "red";
+        		//내용 초기화
+        		name.value = "";
+        		
+        		name.focus();
+        		event.preventDefault();
+    		}
+    	}
+    });
+  </script>
+</html>
