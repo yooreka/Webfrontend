@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>회원가입</title>
+<link rel="stylesheet" href="css/style1.css"/>
+<meta name="viewport"
+	content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+</head>
+<body>
+	<h1>Create account</h1>
+	<div class="inner_login">
+		<div class="login_myweb">
+			<div id="msg" class="msg"></div>
+			<form method="post" action="server.jsp" id="registerform">
+				<fieldset>
+					<legend class="screen_out">회원 가입 입력폼</legend>
+					<div class="box_login">
+						<div class="inp_text">
+							<label for="email" class="screen_out">이메일</label> <input
+								type="email" id="email" name="email" placeholder="E-mail">
+						</div>
+						<div class="inp_text">
+							<label for="userpw" class="screen_out">비밀번호</label> <input
+								type="password" id="userpw" name="userpw"
+								placeholder="Password">
+						</div>
+						<div class="inp_text">
+						<label for="nickname" class="screen_out">닉네임</label> <input
+								type="text" id="nickname" name="nickname"
+								placeholder="Nickname">
+						</div>
+					</div>
+					<button type="submit" class="btn_login">Sign up</button>
+					<div class="login_append">
+						<a class="authnav__item" href="/en/auth/view">Back to log in</a>
+					</div>
+				
+			
+				</fieldset>
+			</form>
+		</div>
+	</div>
+</body>
+<script src="js/login.js"></script>
+</html>
+
+
